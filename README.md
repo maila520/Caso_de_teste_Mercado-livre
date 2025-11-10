@@ -1,87 +1,120 @@
-## Caso de Teste - site Mercado Livre ( para meu proprio estudo)
+# 🧪 Caso de Teste - Site Mercado Livre (Estudo Pessoal)
 
-## Funcionalidade (fluxo principal) :
+## Funcionalidade Principal: Barra de Pesquisa
 
-**Cenario verificar se o fluxo principal (barra de pesquisa) está funcionando corretamente**
+### 🎯 Cenário 1 - Verificar se o fluxo principal (barra de pesquisa) está funcionando corretamente  
+**Pré-condição:** Usuário já está logado  
 
-pré condição : Usuario já está logado
+**Dado:** Que o usuário esteja na tela principal  
+**E:** Clica no campo de pesquisa  
+**Quando:** Ele digita "Televisão"  
+**Então:** Somente produtos relacionados a televisores devem aparecer.  
+**Resultado Obtido:** O sistema retornou produtos relacionados a televisores, incluindo televisões e acessórios compatíveis, conforme esperado.  
+**Status:** ✅ Aprovado  
 
-Dado: que o usuario está na tela principal 
-E: clica no campo de pequise
-Quando: ele escreve para pesquisar por Televisão 
-Então: Somente produtos relacionados a televisores devem aparecer.
-Resultado Obtido: O sistema retornou produtos relacionados a televisores, incluindo televisões e acessórios compatíveis, conforme esperado.
+---
 
-**Cenario Aplicar um filtro mais refinado no fluxo principal**
-pré condição : Usuario já está logado
+### 🎯 Cenário 2 - Aplicar um filtro mais refinado (Televisão Samsung)  
+**Pré-condição:** Usuário já está logado  
 
-Dado: que o usuario esteja na tela principal 
-Quando: buscar na barra de pesquisa, por Televisão Samsung 
-Então: Deve retornar somente Televisão da marca Samsung  
+**Dado:** Que o usuário esteja na tela principal  
+**Quando:** Buscar na barra de pesquisa por "Televisão Samsung"  
+**Então:** Deve retornar somente televisores da marca Samsung.  
+**Resultado Obtido:** Retornou apenas televisores da marca Samsung.  
+**Status:** ✅ Aprovado  
 
-**Cenario Aplicar um filtro mais refinado no fluxo principal**
-pré condição : Usuario já está logado
+---
 
-Dado: que o usuario esteja na pagina principal 
-Quando: no campo de presquisa ele escrever Televisão Samsung 32 polegadas
-Então: Resultado deverá retornar somente Televisão da marca Samsung tendo 32 polegadas
+### 🎯 Cenário 3 - Aplicar um filtro mais refinado (Televisão Samsung 32 polegadas)  
+**Pré-condição:** Usuário já está logado  
 
-**Cenario Pesquisa por código de produto (SKU-un32t4300agxzd)**
-pré condição : Usuario já está logado
+**Dado:** Que o usuário esteja na página principal  
+**Quando:** No campo de pesquisa, ele digita "Televisão Samsung 32 polegadas"  
+**Então:** O resultado deverá retornar somente televisores da marca Samsung de 32 polegadas.  
+**Resultado Obtido:** Retornou televisores da marca Samsung com 32 polegadas.  
+**Status:** ✅ Aprovado  
 
-Dado: que o cliente esteja na pagina principal
-Quando: busca na barra de pesquisa pelo codigo SKU un32t4300agxzd
-Então: deve retornar somente televisão Samsung Smart TV 32"
+---
 
+### 🎯 Cenário 4 - Pesquisa por código de produto (SKU: un32t4300agxzd)  
+**Pré-condição:** Usuário já está logado  
 
-**Cenario Pesquisa por emogi mais o nome assim:📺 televisão**
+**Dado:** Que o cliente esteja na página principal  
+**Quando:** Busca na barra de pesquisa pelo código SKU "un32t4300agxzd"  
+**Então:** Deve retornar somente a televisão Samsung Smart TV 32".  
+**Resultado Obtido:** Retornou corretamente a Smart TV Samsung 32".  
+**Status:** ✅ Aprovado  
 
-Dado: Dado que o usuario que esteja na tela principal e com pressa 
-Quando: o usuario colocar o emoji 📺 
-Então: mensagem de erro escrito: Não há anúncios que correspondam à sua busca
+---
 
-## Fluxo alternativo, testando os filtro 
+### 🎯 Cenário 5 - Pesquisa com emoji (📺 Televisão)  
+**Pré-condição:** Usuário já está logado  
 
-**Cenario testando o filtro de uma marca especfica**
+**Dado:** Que o usuário esteja na tela principal e com pressa  
+**Quando:** O usuário digita o emoji 📺 no campo de pesquisa  
+**Então:** O sistema deve exibir a mensagem de erro: “Não há anúncios que correspondam à sua busca.”  
+**Resultado Obtido:** A mensagem de erro foi exibida corretamente.  
+**Status:** ✅ Aprovado  
 
-pré condição : Usuario já está logado
+---
 
-Dado:Que o cliente entrou na pagina principal 
-E: Pesquisou por televisão 
-Quando: Filtrou a marca LG 
-Então: Retornou Televisão somente da marca LG 
+## 🔄 Fluxo Alternativo - Testando os Filtros
 
-**Cenario testando o filtro de maior preço**
+### 🎯 Cenário 6 - Teste de filtro por marca específica  
+**Pré-condição:** Usuário já está logado  
 
-Dado: Que o cliente entrou na pagina principal
-E: Pesquisou por mesa de 4 cadeiras
-Quando: Quando filtrou por maior preço 
-Então: Deve retornar mesa com 4 cadeiras com os valores mais altos 
+**Dado:** Que o cliente entrou na página principal  
+**E:** Pesquisou por "Televisão"  
+**Quando:** Filtrou a marca LG  
+**Então:** Deve retornar apenas televisores da marca LG.  
+**Resultado Obtido:** Retornou corretamente televisores da marca LG.  
+**Status:** ✅ Aprovado  
 
+---
 
+### 🎯 Cenário 7 - Teste de filtro por maior preço  
+**Pré-condição:** Usuário já está logado  
 
-**Cenario testando o filtragem do fluxo alternativo**
+**Dado:** Que o cliente entrou na página principal  
+**E:** Pesquisou por "Mesa de 4 cadeiras"  
+**Quando:** Filtrou por “Maior preço”  
+**Então:** Deve retornar mesas de 4 cadeiras com os valores mais altos.  
+**Resultado Obtido:** A listagem apresentou corretamente os produtos de maior preço.  
+**Status:** ✅ Aprovado  
 
-Dado: Que o cliente entrou na pagina principal
-E: buscou no campo de barra de pesquisa por Sofá 
-Quando:Filtrou um sofá de 3 lugares, novo e da cor preta 
-Então: Deve se retornar sofá com 3 lugares, Preto e novo
-Resultado obtido: Retornou sofá 3 lugares novo, mas não retornou sofá somente da cor preta
-Status	❌ Reprovado
+---
 
-**Cenario testando o filtragem do Frete gratis**
+### 🎯 Cenário 8 - Teste de filtragem avançada (Sofá)  
+**Pré-condição:** Usuário já está logado  
 
-Dado: Que o cliente entrou na pagina principal
-E: buscou no campo de barra de pesquisa por Sofá 
-Quando: Filtou por sofá e frete gratis 
-Então: Deve retornar apenas sofá com frete gratis 
-Resultado obtido: Apareceu um sofá que cobrou o frete, pagina 1 
-Status	❌ Reprovado
+**Dado:** Que o cliente entrou na página principal  
+**E:** Buscou no campo de pesquisa por "Sofá"  
+**Quando:** Filtrou por sofá de 3 lugares, novo e da cor preta  
+**Então:** Deve retornar apenas sofás com 3 lugares, pretos e novos.  
+**Resultado Obtido:** Retornou sofá de 3 lugares, novo, porém não apenas da cor preta na página 1.  
+**Status:** ❌ Reprovado  
 
+---
 
+### 🎯 Cenário 9 - Teste de filtro por Frete Grátis  
+**Pré-condição:** Usuário já está logado  
 
+**Dado:** Que o cliente entrou na página principal  
+**E:** Buscou no campo de pesquisa por "Sofá"  
+**Quando:** Filtrou por "Frete Grátis"  
+**Então:** Deve retornar apenas sofás com frete gratuito.  
+**Resultado Obtido:** Um sofá que cobrava frete no valor de 3820,00R$ na página 1.  
+**Descrição:** Sofá Retrátil Reclinável 3 Lugares C Molas 1,80m Vegas Suede Cor Preto.
+**Status:** ❌ Reprovado  
 
+---
 
+### 🎯 Cenário 10 - Teste de filtro por valor menor que R$1500,00  
+**Pré-condição:** Usuário já está logado  
 
-
-
+**Dado:** Que o cliente entrou na página principal  
+**E:** Buscou no campo de pesquisa por "Sofá"  
+**Quando:** Filtrou pela condição de preço menor que R$1500,00  
+**Então:** Deve retornar sofás abaixo de R$1500,00.  
+**Resultado Obtido:** Retornou corretamente produtos abaixo de R$1500,00.  
+**Status:** ✅ Aprovado  
