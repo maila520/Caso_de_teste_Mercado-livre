@@ -3,6 +3,7 @@
 ## Funcionalidade (fluxo principal) :
 
 **Cenario verificar se o fluxo principal (barra de pesquisa) está funcionando corretamente**
+
 pré condição : Usuario já está logado
 
 Dado: que o usuario está na tela principal 
@@ -11,21 +12,21 @@ Quando: ele escreve para pesquisar por Televisão
 Então: Somente produtos relacionados a televisores devem aparecer.
 Resultado Obtido: O sistema retornou produtos relacionados a televisores, incluindo televisões e acessórios compatíveis, conforme esperado.
 
-**Aplicar um filtro mais refinado no fluxo principal**
+**Cenario Aplicar um filtro mais refinado no fluxo principal**
 pré condição : Usuario já está logado
 
 Dado: que o usuario esteja na tela principal 
 Quando: buscar na barra de pesquisa, por Televisão Samsung 
 Então: Deve retornar somente Televisão da marca Samsung  
 
-**Aplicar um filtro mais refinado no fluxo principal**
+**Cenario Aplicar um filtro mais refinado no fluxo principal**
 pré condição : Usuario já está logado
 
 Dado: que o usuario esteja na pagina principal 
 Quando: no campo de presquisa ele escrever Televisão Samsung 32 polegadas
 Então: Resultado deverá retornar somente Televisão da marca Samsung tendo 32 polegadas
 
-**Pesquisa por código de produto (SKU-un32t4300agxzd)**
+**Cenario Pesquisa por código de produto (SKU-un32t4300agxzd)**
 pré condição : Usuario já está logado
 
 Dado: que o cliente esteja na pagina principal
@@ -33,12 +34,49 @@ Quando: busca na barra de pesquisa pelo codigo SKU un32t4300agxzd
 Então: deve retornar somente televisão Samsung Smart TV 32"
 
 
-**Pesquisa por emogi mais o nome assim:📺 televisão**
+**Cenario Pesquisa por emogi mais o nome assim:📺 televisão**
 
 Dado: Dado que o usuario que esteja na tela principal e com pressa 
 Quando: o usuario colocar o emoji 📺 
 Então: mensagem de erro escrito: Não há anúncios que correspondam à sua busca
 
+## Fluxo alternativo, testando os filtro 
+
+**Cenario testando o filtro de uma marca especfica**
+
+pré condição : Usuario já está logado
+
+Dado:Que o cliente entrou na pagina principal 
+E: Pesquisou por televisão 
+Quando: Filtrou a marca LG 
+Então: Retornou Televisão somente da marca LG 
+
+**Cenario testando o filtro de maior preço**
+
+Dado: Que o cliente entrou na pagina principal
+E: Pesquisou por mesa de 4 cadeiras
+Quando: Quando filtrou por maior preço 
+Então: Deve retornar mesa com 4 cadeiras com os valores mais altos 
+
+
+
+**Cenario testando o filtragem do fluxo alternativo**
+
+Dado: Que o cliente entrou na pagina principal
+E: buscou no campo de barra de pesquisa por Sofá 
+Quando:Filtrou um sofá de 3 lugares, novo e da cor preta 
+Então: Deve se retornar sofá com 3 lugares, Preto e novo
+Resultado obtido: Retornou sofá 3 lugares novo, mas não retornou sofá somente da cor preta
+Status	❌ Reprovado
+
+**Cenario testando o filtragem do Frete gratis**
+
+Dado: Que o cliente entrou na pagina principal
+E: buscou no campo de barra de pesquisa por Sofá 
+Quando: Filtou por sofá e frete gratis 
+Então: Deve retornar apenas sofá com frete gratis 
+Resultado obtido: Apareceu um sofá que cobrou o frete, pagina 1 
+Status	❌ Reprovado
 
 
 
@@ -46,8 +84,4 @@ Então: mensagem de erro escrito: Não há anúncios que correspondam à sua bus
 
 
 
-
-
-
-**Cenario Verificar se o Fluxo alternative dentro do principal está funcionando**
 
